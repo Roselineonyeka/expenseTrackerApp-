@@ -57,27 +57,27 @@ export default function HomeScreen() {
     {
       id: "1",
       name: "Roseline",
-      avatar: require("../../assets/images/humanimg.png"),
+      avatar: require("../../assets/images/humanimg_female.png"),
     },
     {
       id: "2",
       name: "Daniel",
-      avatar: require("../../assets/images/humanimg.png"),
+      avatar: require("../../assets/images/humanimg_male.png"),
     },
     {
       id: "3",
       name: "Aisha",
-      avatar: require("../../assets/images/humanimg.png"),
+      avatar: require("../../assets/images/humanimg_female.png"),
     },
     {
       id: "4",
       name: "Marcus",
-      avatar: require("../../assets/images/humanimg.png"),
+      avatar: require("../../assets/images/humanimg_male.png"),
     },
     {
       id: "5",
       name: "Grace",
-      avatar: require("../../assets/images/humanimg.png"),
+      avatar: require("../../assets/images/humanimg_female.png"),
     },
   ];
 
@@ -186,7 +186,7 @@ export default function HomeScreen() {
             />
           </View>
 
-          <Text style={{ color: "#AAAAAA", fontSize: 14, fontWeight: "300" }}>
+          <Text style={{ color: "#666666", fontSize: 14, fontWeight: "300" }}>
             See all
           </Text>
         </View>
@@ -236,7 +236,7 @@ export default function HomeScreen() {
             />
           </View>
 
-          <Text style={{ color: "#AAAAAA", fontSize: 14, fontWeight: "300" }}>
+          <Text style={{ color: "#666666", fontSize: 14, fontWeight: "300" }}>
             See all
           </Text>
         </View>
@@ -249,8 +249,8 @@ export default function HomeScreen() {
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
-            paddingHorizontal: 25,
-            gap: 14,
+            paddingHorizontal: 15,
+            gap: 10,
           }}
           renderItem={({ item }) => (
             <View style={styles.contactItem}>
@@ -335,13 +335,13 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
 
-  image: {
-    width: 8,
-    height: 18,
-  },
+  // image: {
+  //   width: 8,
+  //   height: 18,
+  // },
 
   transactionSection: {
-    marginTop: 110,
+    marginTop: 85,
     width: "100%",
     flex: 1,
   },
@@ -360,12 +360,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
 
     paddingVertical: 14,
-    paddingHorizontal: 16,
-
+    paddingHorizontal: 10,
     marginHorizontal: 20,
     borderRadius: 16,
-
-    shadowColor: "#000",
+    shadowColor: "#00000000",
     shadowOpacity: 0.05,
     shadowRadius: 4,
     elevation: 2,
@@ -402,13 +400,14 @@ const styles = StyleSheet.create({
 
   contactItem: {
     alignItems: "center",
+    paddingHorizontal: 10,
   },
 
   contactAvatar: {
     width: 60,
-    height: 70,
-    borderRadius: 28,
-    borderWidth: 1,
-    borderColor: "#EEEEEE",
+    height: 60,
+    borderRadius: 50,
+    // borderWidth: 1,
+    // borderColor: "#EEEEEE",
   },
 });
