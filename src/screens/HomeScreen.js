@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   ScrollView,
+  ImageBackground,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -83,11 +84,34 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
+      {/* <LinearGradient
         colors={["#429690", "#2A7C76"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         style={styles.topSection}
+      > */}
+      {/* <View style={styles.topSectionView}> */}
+      {/* Row 1 */}
+      {/* <View style={styles.row}>
+            <Text style={styles.title}>Good afternoon,</Text>
+
+            <Image
+              source={require("../../assets/images/notificationball.png")}
+              style={styles.image}
+              resizeMode="contain"
+            />
+          </View> */}
+
+      {/* Row 2 */}
+      {/* <Text style={styles.subtitle}>Roseline Morgeana</Text> */}
+      {/* </View> */}
+
+      {/* </LinearGradient> */}
+
+      <ImageBackground
+        source={require("../../assets/images/headerbgimg.png")}
+        style={styles.topSection}
+        resizeMode="cover"
       >
         <View style={styles.topSectionView}>
           {/* Row 1 */}
@@ -104,7 +128,7 @@ export default function HomeScreen() {
           {/* Row 2 */}
           <Text style={styles.subtitle}>Roseline Morgeana</Text>
         </View>
-      </LinearGradient>
+      </ImageBackground>
 
       <LinearGradient colors={["#1B5C58", "#2F7E79"]} style={styles.card}>
         {/* FLOATING CARD */}
@@ -271,14 +295,14 @@ const styles = StyleSheet.create({
   },
 
   topSection: {
-    backgroundColor: "#429690",
+    // backgroundColor: "#429690",
     justifyContent: "flex-start",
-    padding: 10,
+    // padding: 10,
     width: "100%",
     height: 260,
     paddingTop: 60,
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    // borderBottomLeftRadius: 50,
+    // borderBottomRightRadius: 50,
     alignItems: "flex-start",
   },
 
