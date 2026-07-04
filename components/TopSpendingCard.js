@@ -7,9 +7,14 @@ export default function TopSpendingCard({
   amount,
   icon,
   selected,
+  onPress,
+  scope,
 }) {
   return (
-    <Pressable style={[styles.card, selected && styles.selectedCard]}>
+    <Pressable
+      onPress={onPress}
+      style={[styles.card, selected && styles.selectedCard]}
+    >
       <Image source={icon} style={styles.icon} />
 
       <View style={styles.middle}>
@@ -22,7 +27,13 @@ export default function TopSpendingCard({
         </Text>
       </View>
 
-      <Text style={[styles.amount, selected && styles.selectedAmount]}>
+      <Text
+        style={[
+          styles.amount,
+          scope === "Income" && styles.incomeAmount,
+          selected && styles.selectedAmount,
+        ]}
+      >
         {amount}
       </Text>
     </Pressable>
@@ -95,12 +106,16 @@ const styles = StyleSheet.create({
   },
 
   amount: {
-    color: "#FF4D4D",
+    color: "#FF4D4D", // Expense = red
     fontWeight: "700",
     fontSize: 18,
   },
 
+  incomeAmount: {
+    color: "#429690", // Income = green
+  },
+
   selectedAmount: {
-    color: "#D8FFF5",
+    color: "#D8FFF5", // Selected card
   },
 });
