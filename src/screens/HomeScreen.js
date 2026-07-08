@@ -9,48 +9,32 @@ import {
   ImageBackground,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-
+import WalletListItem from "../../components/WalletListItem";
 export default function HomeScreen() {
   const transactions = [
     {
-      id: "1",
-      title: "Up Work",
-      date: "12 May 2026",
-      amount: "-₦120.00",
-      type: "debit",
+      id: 1,
+      title: "Upwork",
+      date: "Today",
+      amount: "+ $890.00",
       icon: require("../../assets/images/upworkimg.png"),
-    },
-    {
-      id: "2",
-      title: "Salary",
-      date: "10 May 2026",
-      amount: "+₦2,000.00",
       type: "credit",
-      icon: require("../../assets/images/humanimg.png"),
     },
     {
-      id: "3",
-      title: "Paypal",
-      date: "08 May 2026",
-      amount: "-₦80.00",
-      type: "debit",
-      icon: require("../../assets/images/paypalimg.png"),
-    },
-    {
-      id: "4",
+      id: 2,
       title: "Transfer",
-      date: "05 May 2026",
-      amount: "+₦500.00",
-      type: "credit",
-      icon: require("../../assets/images/humanimg.png"),
+      date: "Yesterday",
+      amount: "- $85.00",
+      icon: require("../../assets/images/humanimg_female.png"),
+      type: "debit",
     },
     {
-      id: "5",
-      title: "YouTube",
-      date: "05 May 2026",
-      amount: "-₦500.00",
-      type: "debit",
+      id: 3,
+      title: "Youtube",
+      date: "Jan 16, 2022",
+      amount: "- $11.99",
       icon: require("../../assets/images/youtubeimg.png"),
+      type: "debit",
     },
   ];
 
@@ -218,7 +202,7 @@ export default function HomeScreen() {
         {/* Replaced FlatList with a plain map to avoid nesting a
             VirtualizedList inside this vertical ScrollView */}
         <View style={{ paddingBottom: 30 }}>
-          {transactions.map((item) => (
+          {/* {transactions.map((item) => (
             <View key={item.id} style={styles.transactionItem}>
               <View style={styles.transactionLeft}>
                 <Image
@@ -244,6 +228,17 @@ export default function HomeScreen() {
                 {item.amount}
               </Text>
             </View>
+          ))} */}
+
+          {transactions.map((item) => (
+            <WalletListItem
+              key={item.id}
+              title={item.title}
+              date={item.date}
+              amount={item.amount}
+              icon={item.icon}
+              type={item.type}
+            />
           ))}
         </View>
 
